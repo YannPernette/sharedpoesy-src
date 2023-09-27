@@ -69,7 +69,8 @@ export default {
       }
     },
     async logout() {
-      pb.authStore.clear();
+      await pb.authStore.clear();
+      document.getElementById("status").innerHTML = "You are now logged out";
     },
   },
 };
