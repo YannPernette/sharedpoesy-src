@@ -69,16 +69,7 @@ export default {
       }
     },
     async logout() {
-      await pb
-        .collection("users")
-        .authWithPassword(
-          document.getElementById("email").value,
-          document.getElementById("passwd").value
-        );
-        if (pb.authStore.isValid) {
-          pb.authStore.clear();
-          document.getElementById("status").innerHTML = "You are now logged out";
-        }
+      pb.authStore.clear();
     },
   },
 };
